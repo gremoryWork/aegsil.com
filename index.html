@@ -220,6 +220,9 @@
     letter-spacing: 2px;
     animation: fadeUp 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) both;
     position: relative;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
   }
   .hero h1 .outline {
     -webkit-text-stroke: 1.5px rgba(255,255,255,0.25);
@@ -940,8 +943,8 @@
       text-align: center;
     }
     .hero-content { display: flex; flex-direction: column; align-items: center; }
-    /* ── FIX: мобильный размер заголовка ── */
-    .hero h1 { font-size: clamp(42px, 13vw, 72px) !important; }
+    /* ── FIX: мобильный размер — «КАРТОЧЕК» самое длинное слово, подгоняем под него ── */
+    .hero h1 { font-size: 11.5vw !important; line-height: 1.0 !important; letter-spacing: 0px !important; }
     .hero h1 .outline { -webkit-text-stroke-width: 1px; }
     .hero-sub { max-width: 100%; text-align: center; }
     .hero-actions { justify-content: center; }
@@ -970,7 +973,7 @@
   @media (max-width: 520px) {
     .works-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr; }
-    .hero h1 { font-size: clamp(38px, 12vw, 60px) !important; }
+    .hero h1 { font-size: 11vw !important; letter-spacing: 0px !important; }
     .hero-stats { gap: 16px; }
     .hero-stat-divider { display: none; }
   }
